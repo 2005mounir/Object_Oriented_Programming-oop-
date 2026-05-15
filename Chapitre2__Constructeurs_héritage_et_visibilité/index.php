@@ -1,7 +1,10 @@
 <?php
+ require "test.php";
+
+
+
 
 //constracteur
-
 class Person{
     public $name ;
     public $age ;
@@ -87,6 +90,7 @@ class Admin extends user {
 
    public function FctnRole(){
      echo  'this is my role'.'('.$this->role .')';
+     echo "<br>";
    }
 }
 
@@ -98,5 +102,23 @@ $admin->FctnRole();
 
 
 
+
+
+//  here we will use require
+ class car extends Vehicle{
+   public  $door;
+   public function __construct($b, $c ,$d){
+      parent::__construct($b ,$c);
+      $this->door = $d;
+   }
+   public function discribe2(){
+      echo "and has a"." ". $this->door;
+   }
+ }
+
+
+ $cars = new car("Bmw" , "blue" , 4);
+ $cars->describe();
+ $cars->discribe2();
 
 ?>
